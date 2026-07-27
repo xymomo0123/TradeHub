@@ -1,1349 +1,536 @@
 # MOMO Finance - Stock Trading System Frontend
 
-## 项目简介
+## 📌 Project Overview
 
-**MOMO Finance 股票交易系统前端** 是一个基于 HTML、CSS 和 JavaScript 开发的模拟股票交易平台前端项目。
+**MOMO Finance** is a simulated stock trading platform frontend developed with **HTML5, CSS3 and JavaScript**.
 
-项目实现了完整的股票交易业务流程，包括用户角色管理、实时行情展示、个股详情分析、股票交易、持仓管理以及交易记录查询等核心功能。
+The project implements a complete web-based stock trading experience, including user authentication, real-time market visualization, stock detail analysis, simulated trading, portfolio management and transaction history tracking.
 
-本项目通过模拟后端接口交互，构建了一个功能完整、界面友好的 Web 股票交易系统，旨在实践现代 Web 前端开发流程，提升对前后端交互、动态数据渲染以及用户体验设计的理解。
+The system interacts with backend APIs to simulate a real-world financial trading platform, focusing on frontend engineering practices such as asynchronous data communication, dynamic rendering, state management and interactive visualization.
 
-项目为《股票交易系统》课程实验项目，综合运用了 HTML5、CSS3、JavaScript、jQuery、Chart.js 等前端技术，实现从页面设计、接口调用到业务逻辑处理的完整开发流程。
 
----
+## ✨ Features
 
-# 项目特点
-
-- ✅ 支持游客与登录用户两种角色模式
-- ✅ 实现股票实时行情展示与自动刷新
-- ✅ 支持个股历史价格走势图展示
-- ✅ 完整模拟股票买入/卖出交易流程
-- ✅ 支持用户持仓管理与收益统计
-- ✅ 支持交易记录查询与筛选
-- ✅ 响应式 UI 设计，提供良好的交互体验
+- 🔐 User authentication with different access permissions
+- 📈 Real-time stock market data visualization
+- 🔍 Stock search and individual stock analysis
+- 📊 Interactive price trend charts
+- 💰 Simulated stock buying and selling system
+- 📦 Portfolio management and profit/loss calculation
+- 📋 Transaction history query and filtering
+- 📱 Responsive user interface design
 
 
 ---
 
-# 功能模块
+# 🖥️ System Preview
 
-## 1. 用户认证系统
+> Add screenshots here
 
-系统根据用户登录状态划分不同权限：
+Example:
 
-| 用户角色 | 功能 |
+```
+📷 Homepage Screenshot
+
+📷 Stock Detail Chart
+
+📷 Trading Interface
+
+📷 Portfolio Page
+```
+
+
+---
+
+# 🚀 Core Functionalities
+
+
+## 1. User Authentication System
+
+The system supports two user modes:
+
+| Role | Functions |
 | :--- | :--- |
-| 游客用户 | 浏览市场行情、查看股票详情、注册、登录 |
-| 登录用户 | 查看行情、股票交易、管理持仓、查看交易记录、注销 |
+| Guest | Browse market data, search stocks, view stock details, register and login |
+| User | Trade stocks, manage portfolio, view transaction history |
+
+
+Implemented features:
+
+- User registration
+- Login verification
+- Session persistence
+- User identity checking
+
+
+User login state is stored through:
+
+```
+sessionStorage
+```
+
 
 ---
 
-## 2. 注册与登录
+## 2. Real-time Market Data Display
 
-主要功能：
+The platform provides dynamic stock market visualization.
 
-- 用户注册
-- 用户登录验证
-- 密码一致性检查
-- 用户状态持久化
-- 登录状态检测
+Supported markets:
 
-实现逻辑：
-
-- 注册成功后跳转登录页面
-- 登录成功后保存用户状态
-- 登录用户访问页面时自动进行身份校验
-
-默认用户账户：
-
-```
-初始资金：1,000,000 元
-```
-
----
-
-## 3. 股票行情展示
-
-支持展示不同市场股票行情：
-
-- 沪市
-- 深市
-- 创业板
+- Shanghai Stock Exchange
+- Shenzhen Stock Exchange
+- ChiNext
 
 
-展示信息：
+Displayed information:
 
-| 数据 | 描述 |
+| Data | Description |
 | :--- | :--- |
-| 股票代码 | 股票唯一编号 |
-| 股票名称 | 股票名称 |
-| 最新价格 | 当前股票价格 |
-| 涨跌幅 | 当前涨跌比例 |
-| 涨跌额 | 当前价格变化量 |
+| Stock Code | Unique stock identifier |
+| Stock Name | Stock information |
+| Latest Price | Current market price |
+| Change Rate | Percentage change |
+| Price Change | Absolute price change |
 
 
-功能特点：
+Features:
 
-- 每 5 秒自动刷新行情数据
-- 显示刷新倒计时
-- 涨跌颜色区分：
-  - 🔴 红色：上涨
-  - 🟢 绿色：下跌
+- Automatic data refresh every 5 seconds
+- Countdown display
+- Color-based price movement indication
 
----
-
-## 4. 个股详情分析
-
-点击股票详情按钮后，通过模态框展示：
-
-- 股票实时信息
-- 历史价格走势
-- 动态价格变化
-
-
-技术实现：
-
-- 使用 Chart.js 绘制折线图
-- 定时刷新图表数据
-- 根据股票涨跌自动调整图表颜色
-- 鼠标悬停查看具体价格
+```
+Red  → Price increase
+Green → Price decrease
+```
 
 
 ---
 
-## 5. 股票交易模块
-
-支持：
-
-- 股票买入
-- 股票卖出
+## 3. Individual Stock Analysis
 
 
-交易流程：
+Users can click a stock to view detailed information.
+
+Implemented features:
+
+- Stock information display
+- Historical price trend visualization
+- Dynamic chart updating
+
+
+Technology:
+
+- Chart.js for interactive visualization
+- Real-time chart refresh
+- Responsive chart rendering
+
+
+---
+
+## 4. Stock Trading System
+
+
+The system simulates basic stock trading operations.
+
+Supported operations:
+
+- Buy stocks
+- Sell stocks
+
+
+Trading workflow:
 
 ```
-选择股票
-    ↓
-选择交易方向
-    ↓
-输入交易数量和价格
-    ↓
-计算预计交易金额
-    ↓
-提交交易请求
-    ↓
-显示交易结果
+Select Stock
+
+      ↓
+
+Choose Trading Type
+
+      ↓
+
+Input Quantity and Price
+
+      ↓
+
+Validate Trading Parameters
+
+      ↓
+
+Submit Trading Request
+
+      ↓
+
+Update Account Information
+
 ```
 
 
-交易规则：
+Implemented rules:
 
-- 股票数量必须为 100 的整数倍
-- 自动计算交易金额
-- 根据服务器返回结果显示：
+- Trading quantity must be a multiple of 100
+- Automatic transaction amount calculation
+- Balance verification
+- Position verification
 
-| 状态 | 描述 |
+
+Possible transaction results:
+
+| Status | Description |
 | :--- | :--- |
-| 委托成功 | 交易请求提交成功 |
-| 交易成功 | 股票交易完成 |
-| 废单 | 交易失败 |
-| 余额不足 | 买入资金不足 |
-| 持仓不足 | 卖出数量超过持仓 |
+| Success | Transaction completed |
+| Pending | Order submitted |
+| Failed | Invalid transaction |
+| Insufficient Balance | Cannot complete purchase |
+| Insufficient Position | Cannot complete sale |
+
 
 ---
 
-## 6. 持仓管理
-
-用户可以查看当前股票资产情况。
+## 5. Portfolio Management
 
 
-展示内容：
-
-### 账户统计
-
-- 当前余额
-- 持仓总数量
-- 总成本
-- 总市值
-- 总盈亏
+Users can monitor their investment status.
 
 
-### 持仓详情
+Portfolio dashboard provides:
 
-包含：
+- Account balance
+- Total holdings
+- Total cost
+- Market value
+- Profit/loss statistics
 
-| 字段 | 描述 |
+
+Holding details:
+
+| Field | Description |
 | :--- | :--- |
-| 股票代码 | 股票编号 |
-| 股票名称 | 股票名称 |
-| 持仓数量 | 当前持有数量 |
-| 买入均价 | 平均买入价格 |
-| 最新价格 | 当前市场价格 |
-| 成本 | 投入金额 |
-| 市值 | 当前价值 |
-| 盈亏金额 | 收益情况 |
-| 盈亏比例 | 收益率 |
-
----
-
-## 7. 交易记录查询
-
-支持查看历史交易：
-
-展示：
-
-- 交易时间
-- 股票代码
-- 股票名称
-- 买卖方向
-- 委托价格
-- 成交价格
-- 数量
-- 金额
-- 交易状态
-- 订单编号
-
-
-支持筛选：
-
-- 买入 / 卖出
-- 不同交易状态
+| Stock Code | Stock identifier |
+| Stock Name | Stock information |
+| Quantity | Number of shares |
+| Average Price | Purchase average price |
+| Current Price | Latest market price |
+| Market Value | Current asset value |
+| Profit/Loss | Investment return |
 
 
 ---
 
-# 技术栈
+## 6. Transaction History
 
-| 类型 | 技术 |
+
+Users can view historical trading records.
+
+
+Information displayed:
+
+- Transaction time
+- Stock code
+- Stock name
+- Trading direction
+- Order price
+- Execution price
+- Quantity
+- Amount
+- Transaction status
+
+
+Filtering supported:
+
+- Buy / Sell
+- Transaction status
+
+
+---
+
+# 🛠️ Technology Stack
+
+
+| Category | Technology |
 | :--- | :--- |
-| 页面结构 | HTML5 |
-| 页面样式 | CSS3 |
-| 前端逻辑 | JavaScript ES6+ |
-| DOM 操作 | jQuery 3.6.0 |
-| 数据可视化 | Chart.js |
-| 数据缓存 | sessionStorage |
-| 网络请求 | Fetch API、jQuery AJAX |
-| 开发工具 | Visual Studio Code |
+| Frontend Structure | HTML5 |
+| Styling | CSS3 |
+| Programming Language | JavaScript ES6+ |
+| DOM Manipulation | jQuery 3.6.0 |
+| Data Visualization | Chart.js |
+| Data Storage | sessionStorage |
+| API Communication | Fetch API, AJAX |
+| Development Tool | Visual Studio Code |
 
 
 ---
 
-# 技术实现
+# 🏗️ Project Structure
 
-## 1. 用户认证流程
-
-
-### 登录流程
 
 ```
-用户输入账号密码
+project-root/
 
-        ↓
-
-前端表单验证
-
-        ↓
-
-调用 /login 接口
-
-        ↓
-
-验证成功
-
-        ↓
-
-sessionStorage 保存用户状态
-
-        ↓
-
-跳转 user.html
-```
-
-
-### 注册流程
+├── index.html              # Guest homepage
+├── login.html              # Login page
+├── register.html           # Registration page
+├── user.html               # User dashboard
+├── portfolio.html          # Portfolio management
+├── profile.html            # User center
+│
+├── css/
+│   ├── style.css           # Global styles
+│   ├── guest.css           # Guest pages
+│   ├── auth.css            # Authentication pages
+│
+├── js/
+│   ├── main.js             # Common functions and API requests
+│   ├── guest.js            # Market browsing logic
+│   ├── auth.js             # Login/register logic
+│   ├── user.js             # Trading logic
+│   ├── portfolio.js        # Portfolio management
+│   ├── profile.js          # Transaction records
+│
+└── README.md
 
 ```
-填写注册信息
-
-        ↓
-
-验证密码一致性
-
-        ↓
-
-调用 /register 接口
-
-        ↓
-
-注册成功
-
-        ↓
-
-跳转登录页面
-```
-
-
-### 注销流程
-
-```
-点击注销
-
-        ↓
-
-调用 /logout 接口
-
-        ↓
-
-清除 sessionStorage
-
-        ↓
-
-返回游客首页
-```
-
----
-
-## 2. 数据缓存与涨跌幅计算
-
-系统使用 `Map` 对象：
-
-```javascript
-previousMarketData
-```
-
-缓存股票上一次价格，用于计算实时涨跌情况。
-
-
-计算公式：
-
-涨跌额：
-
-```
-最新价格 - 前一次价格
-```
-
-
-涨跌幅：
-
-```
-(涨跌额 / 前一次价格) × 100%
-```
-
-
-每次获取最新行情后：
-
-1. 更新股票当前价格
-2. 保存到缓存
-3. 下一次刷新时作为计算基准
 
 
 ---
 
-## 3. 定时刷新机制
+# ⚙️ Implementation Highlights
 
 
-### 行情刷新
+## 1. Asynchronous Data Communication
+
+
+The frontend communicates with backend services through:
+
+- Fetch API
+- jQuery AJAX
+
+
+Implemented functions:
+
+- Request stock data
+- Submit trading operations
+- Retrieve user information
+- Load transaction records
+
+
+---
+
+## 2. Real-time Data Refresh Mechanism
+
+
+Market data refresh:
 
 ```javascript
 setInterval(loadMarketData, 5000)
 ```
 
 
-功能：
+Features:
 
-- 每 5 秒请求一次行情数据
-- 自动刷新股票列表
-- 更新涨跌幅
-
-
-### 倒计时显示
-
-独立计时器：
-
-```javascript
-setInterval(updateCountdown, 1000)
-```
+- Periodic API requests
+- Automatic UI updates
+- Real-time price changes
 
 
-实现：
+Independent timers are used for:
 
-- 每秒更新倒计时
-- 刷新后重新开始计时
-
-
-### 个股详情刷新
-
-个股详情页面维护独立定时器：
-
-```javascript
-setInterval(updateChart, 5000)
-```
+- Market page refresh
+- Stock detail chart refresh
 
 
-避免：
-
-- 主页面刷新
-- 图表刷新
-
-之间产生冲突。
-
-
-页面关闭时：
-
-```javascript
-clearInterval(timer)
-```
-
-释放资源。
-
----
-
-
-# 项目页面结构
-
-## 页面功能说明
-
-| 页面 | 文件 | 描述 | 核心功能 |
-| :--- | :--- | :--- | :--- |
-| 游客首页 | `index.html` | 系统入口，面向未登录用户 | 浏览行情、市场切换、股票搜索、查看个股详情、登录/注册 |
-| 登录页面 | `login.html` | 用户登录界面 | 用户身份验证、接口调用、跳转用户主页 |
-| 注册页面 | `register.html` | 新用户注册界面 | 用户注册、表单验证、密码一致性检查 |
-| 用户首页 | `user.html` | 登录用户交易工作台 | 行情展示、股票交易、账户信息展示 |
-| 持仓页面 | `portfolio.html` | 用户资产管理页面 | 查看余额、持仓统计、股票盈亏情况 |
-| 个人中心 | `profile.html` | 用户信息与交易中心 | 用户信息展示、交易记录查询、注销功能 |
+to avoid asynchronous conflicts.
 
 
 ---
 
-# 页面跳转关系
+## 3. Stock Price Change Calculation
 
-```
-游客首页 (index.html)
 
-        │
-
-        ├──────── 登录 (login.html)
-        │                │
-        │                ↓
-        │          用户首页 (user.html)
-        │                │
-        │                ├── 持仓查看 (portfolio.html)
-        │                │
-        │                ├── 个人中心 (profile.html)
-        │                │
-        │                └── 注销
-        │                      │
-        ↓                      ↓
-
-注册页面 (register.html) ←──── 游客首页
-```
-
-
----
-
-# 项目目录结构
-
-```
-project-root/
-
-├── index.html                 # 游客首页
-├── login.html                 # 登录页面
-├── register.html              # 注册页面
-├── user.html                  # 用户交易首页
-├── portfolio.html             # 持仓查看页面
-├── profile.html               # 个人中心页面
-│
-├── css/
-│   ├── style.css              # 全局样式
-│   ├── guest.css              # 游客页面样式
-│   ├── auth.css               # 登录注册页面样式
-│   └── ...                    # 其他页面独立样式
-│
-├── js/
-│   ├── main.js                # 全局工具函数、API封装
-│   ├── guest.js               # 游客页面逻辑
-│   ├── auth.js                # 登录注册逻辑
-│   ├── user.js                # 用户首页逻辑
-│   ├── portfolio.js            # 持仓页面逻辑
-│   ├── profile.js              # 个人中心逻辑
-│   ├── jquery-3.6.0.min.js     # jQuery库
-│   └── chart.min.js            # Chart.js库
-│
-└── README.md                  # 项目说明文档
-
-```
-
-
----
-
-# 核心设计实现
-
-
-## 1. 交易业务流程
-
-
-用户点击交易按钮：
-
-```
-用户选择股票
-
-        ↓
-
-打开交易模态框
-
-        ↓
-
-选择交易类型
-
-(买入 / 卖出)
-
-        ↓
-
-输入数量和价格
-
-        ↓
-
-前端验证交易参数
-
-        ↓
-
-调用交易接口
-
-        ↓
-
-服务器返回交易结果
-
-        ↓
-
-更新账户余额和持仓信息
-
-```
-
-
-交易过程中实现：
-
-- 股票数量合法性验证
-- 交易金额实时计算
-- 用户余额检查
-- 持仓数量检查
-- 交易结果状态反馈
-
-
----
-
-## 2. 数据流设计
-
-
-项目采用：
-
-```
-视图(View)
-
-      ↓
-
-事件(Event)
-
-      ↓
-
-数据处理(Data Processing)
-
-      ↓
-
-视图更新(View Update)
-
-```
-
-
-具体实现：
-
-
-### ① 视图到事件
-
-通过事件监听捕获用户操作：
-
-例如：
-
-- 点击股票详情
-- 提交登录表单
-- 点击交易按钮
-- 筛选交易记录
-
-
----
-
-### ② 事件到数据处理
-
-事件触发后调用对应业务函数：
-
-例如：
-
-```javascript
-loadMarketData()
-
-login()
-
-submitTrade()
-
-loadPortfolio()
-```
-
-
----
-
-### ③ 数据处理到视图更新
-
-获取数据后动态修改页面：
-
-例如：
-
-- 更新股票表格
-- 更新余额
-- 更新持仓列表
-- 更新交易记录
-
-
----
-
-# 全局设计
-
-
-| 设计内容 | 实现方式 |
-| :--- | :--- |
-| 全局状态管理 | 使用 `marketData`、`userInfo`、`portfolioData` 等变量管理数据 |
-| API封装 | 使用 `apiRequest()` 统一处理接口请求 |
-| 数据格式化 | 使用 `formatNumber()` 等工具函数 |
-| 股票计算 | 使用 `calculateStockChange()` 计算涨跌 |
-| 登录状态 | 使用 `sessionStorage` 保存用户信息 |
-| 错误处理 | 所有请求均包含异常捕获机制 |
-| 页面通信 | 使用全局事件监听实现状态同步 |
-
-
----
-
-# jQuery 与 Chart.js 应用
-
-
-| 功能模块 | jQuery作用 | Chart.js作用 |
-| :--- | :--- | :--- |
-| 行情展示 | AJAX请求股票数据，动态更新表格 | - |
-| 个股详情 | 管理模态框、获取股票信息 | 绘制历史价格走势图 |
-| 登录注册 | 处理表单提交与验证 | - |
-| 股票交易 | 处理交易请求和结果展示 | - |
-| 数据刷新 | 管理定时请求 | 动态更新图表 |
-| 页面适配 | 监听窗口变化 | 自动调整图表尺寸 |
-
-
----
-
-# 功能效果展示
-
-
-## 1. 游客首页
-
-
-主要功能：
-
-- 默认展示沪市股票行情
-- 支持沪市、深市、创业板切换
-- 股票列表动态刷新
-- 支持股票搜索
-
-
-页面展示：
-
-```
-股票代码 | 股票名称 | 最新价格 | 涨跌幅 | 涨跌额
-```
-
-
-交互效果：
-
-- 每 5 秒自动刷新
-- 显示刷新倒计时
-- 股票上涨显示红色
-- 股票下跌显示绿色
-
-
----
-
-## 2. 个股详情
-
-
-功能：
-
-- 点击查看详情按钮
-- 弹出股票详情模态框
-- 显示历史价格走势
-
-
-实现效果：
-
-- 折线图动态变化
-- 支持鼠标悬停查看价格
-- 根据涨跌调整图表颜色
-
-
----
-
-## 3. 搜索功能
-
-
-支持：
-
-- 输入股票代码
-- 输入股票名称
-
-
-搜索流程：
-
-```
-输入关键词
-
-      ↓
-
-匹配股票数据
-
-      ↓
-
-成功
-
-      ↓
-
-打开股票详情
-
-
-失败
-
-      ↓
-
-提示未找到相关股票
-
-```
-
-
----
-
-## 4. 登录与注册
-
-
-登录页面：
-
-- 卡片式 UI 设计
-- 用户名密码输入
-- 登录状态提示
-
-
-注册页面：
-
-- 用户信息填写
-- 密码二次确认
-- 注册成功提示
-
-
-成功登录后：
-
-```
-login.html
-
-        ↓
-
-user.html
-```
-
-
----
-
-## 5. 股票交易
-
-
-交易界面：
-
-包含：
-
-- 股票名称
-- 股票代码
-- 当前价格
-- 买卖选择
-- 交易数量
-- 交易金额
-
-
-功能：
-
-- 数量必须为100整数倍
-- 自动计算交易金额
-- 实时显示交易结果
-
-
----
-
-## 6. 持仓查看
-
-
-展示：
-
-### 资产统计卡片
-
-包括：
-
-- 持仓总数
-- 总成本
-- 总市值
-- 总盈亏
-
-
-### 持仓表格
-
-显示：
-
-- 股票代码
-- 股票名称
-- 持仓数量
-- 买入均价
-- 当前价格
-- 成本
-- 市值
-- 盈亏金额
-- 盈亏比例
-
-
-空状态：
-
-```
-暂无持仓
-
-点击交易按钮开始投资
-```
-
-
----
-
-## 7. 个人中心
-
-
-包含：
-
-用户信息：
-
-- 用户头像
-- 用户名
-- 当前余额
-- 注销按钮
-
-
-交易统计：
-
-- 总交易次数
-- 成功交易次数
-- 委托中交易数量
-- 最近交易时间
-
-
-交易记录：
-
-支持：
-
-- 按交易方向筛选
-- 按交易状态筛选
-
-
----
-
-# 快速开始
-
-
-## 环境要求
-
-运行本项目前，需要准备：
-
-- 一个现代浏览器
-
-推荐：
-
-- Google Chrome
-- Microsoft Edge
-- Firefox
-
-
-- 一个正在运行的后端服务
-
-默认接口地址：
-
-```
-http://127.0.0.1:12345
-```
-
-
----
-
-# 项目运行
-
-
-## 1. 获取项目代码
-
-
-下载或克隆项目：
-
-```bash
-git clone <repository-url>
-```
-
-
-进入项目目录：
-
-```bash
-cd project-root
-```
-
-
----
-
-## 2. 启动后端服务
-
-
-根据后端项目说明启动服务器。
-
-
-默认监听：
-
-```
-http://127.0.0.1:12345
-```
-
-
-确保：
-
-- 后端接口正常运行
-- 前端 API 地址配置正确
-
-
----
-
-## 3. 启动前端页面
-
-
-方式一：
-
-直接使用浏览器打开：
-
-```
-index.html
-```
-
-
-方式二：
-
-使用 Python 启动静态服务器：
-
-```bash
-python -m http.server
-```
-
-
-然后访问：
-
-```
-http://localhost:8000
-```
-
-
-即可进入股票交易系统。
-
-
----
-
-# 遇到的问题及解决方案
-
-
-## 1. fetch API 与 jQuery AJAX 混用问题
-
-
-### 问题
-
-项目开发过程中同时使用：
-
-- 原生 Fetch API
-- jQuery AJAX
-
-
-导致：
-
-- 请求方式不统一
-- 错误处理逻辑不同
-- 部分代码存在重复
-
-
-### 解决方案
-
-后续优化方向：
-
-统一采用 Fetch API 或 Axios：
-
-- 统一请求格式
-- 统一异常处理
-- 提升代码维护性
-
-
----
-
-## 2. 多页面异步刷新冲突
-
-
-### 问题
-
-股票行情页面和个股详情页面均需要定时刷新：
-
-- 主页面刷新行情
-- 详情页刷新走势图
-
-
-多个计时器同时运行时：
-
-- 倒计时显示异常
-- 数据刷新相互影响
-
-
-### 解决方案
-
-
-为不同功能设计独立定时器：
-
-
-行情页面：
-
-```javascript
-marketTimer
-```
-
-
-个股详情：
-
-```javascript
-chartTimer
-```
-
-
-页面关闭或模态框关闭时：
-
-```javascript
-clearInterval(timer)
-```
-
-
-及时释放资源。
-
-
----
-
-## 3. 数据加载顺序问题
-
-
-### 问题
-
-个人中心页面加载时：
-
-用户交易记录需要股票名称信息。
-
-但是：
-
-- 交易记录加载速度较快
-- 股票行情数据尚未完成加载
-
-
-导致：
-
-股票名称无法正确显示。
-
-
-### 解决方案
-
-
-使用 Promise 控制异步执行顺序：
-
-```javascript
-Promise.all([
-    loadUserInfo(),
-    loadMarketData()
-])
-```
-
-
-确保：
-
-1. 用户信息加载完成
-2. 股票数据加载完成
-
-之后再渲染交易记录。
-
-
----
-
-# 项目亮点设计
-
-
-## 1. 响应式页面设计
-
-
-项目针对不同屏幕尺寸进行适配：
-
-- 桌面端
-- 平板端
-
-
-实现：
-
-- 弹性布局
-- 自适应表格
-- 动态调整组件尺寸
-
-
----
-
-## 2. 良好的交互体验
-
-
-页面加入多种交互效果：
-
-
-### 按钮效果
-
-- 鼠标悬停变化
-- 点击反馈
-- 状态提示
-
-
-### 卡片效果
-
-- 悬浮动画
-- 阴影变化
-- 信息层次展示
-
-
-### 状态反馈
-
-针对不同情况显示：
-
-- 加载状态
-- 错误提示
-- 空数据提示
-
-
----
-
-## 3. 股票涨跌缓存机制
-
-
-使用：
+The system maintains previous market data:
 
 ```javascript
 previousMarketData
 ```
 
 
-保存股票历史价格。
+Used for calculating:
+
+- Price changes
+- Percentage changes
 
 
-优势：
-
-- 准确计算涨跌幅
-- 避免重复请求
-- 提升数据展示效果
+This improves the accuracy of dynamic market visualization.
 
 
 ---
 
-## 4. 市场分类与股票搜索
+## 4. Frontend State Management
 
 
-支持：
+Global states include:
 
-- 沪市
-- 深市
-- 创业板
+- Market data
+- User information
+- Portfolio information
+- Current market selection
 
 
-并提供：
+Common utilities are encapsulated:
 
-股票代码搜索：
+- API request functions
+- Number formatting
+- Stock calculation functions
+
+
+---
+
+# ▶️ Run the Project
+
+
+## Requirements
+
+- Modern browser
+- Running backend service
+
+
+Default backend address:
 
 ```
-600000
+http://127.0.0.1:12345
 ```
 
 
-股票名称搜索：
+---
+
+## Start Frontend
+
+
+Option 1:
+
+Open directly:
 
 ```
-浦发银行
+index.html
 ```
 
 
-方便用户快速定位股票。
+Option 2:
+
+Start local server:
+
+```bash
+python -m http.server
+```
+
+
+Then visit:
+
+```
+http://localhost:8000
+```
 
 
 ---
 
-# 后续优化方向
+# 🌟 Project Highlights
 
 
-## 1. 统一网络请求方式
+## Real-time Financial Data Visualization
+
+Implemented dynamic stock market updates and interactive price charts.
 
 
-当前：
+## Complete Trading Workflow
 
-- Fetch
-- jQuery AJAX
+Simulated:
 
-
-未来：
-
-统一使用：
-
-- Fetch API
-- Axios
+- User authentication
+- Stock trading
+- Asset management
+- Transaction tracking
 
 
-提高：
+## Interactive User Experience
 
-- 可维护性
-- 可扩展性
+Implemented:
 
-
----
-
-## 2. 增强异常处理
-
-
-进一步完善：
-
-- 网络断开提示
-- 请求超时处理
-- 服务端异常处理
-- 数据格式校验
+- Responsive layout
+- Modal windows
+- Dynamic tables
+- Loading/error/empty states
 
 
-提升系统稳定性。
+## Financial Scenario Application
+
+The project combines frontend engineering with financial application scenarios, improving understanding of data-driven web applications.
 
 
 ---
 
-## 3. 组件化开发
+# 🔮 Future Improvements
 
 
-当前基于原生 JavaScript 实现。
+## Frontend Framework Migration
+
+Currently implemented with native JavaScript.
+
+Future improvements:
+
+- Vue.js / React componentization
+- Reusable UI components
+- Better state management
 
 
-未来可以引入：
+## Enhanced Error Handling
 
-- Vue
-- React
+Improve:
 
-
-将：
-
-- 模态框
-- 表格
-- 卡片
-- 导航栏
+- Network exception handling
+- Timeout detection
+- API validation
 
 
-封装为可复用组件。
+## Backend Integration
 
+Future versions could introduce:
 
----
-
-## 4. 引入状态管理
-
-
-随着系统复杂度增加，可以采用：
-
-- Vuex
-- Redux
-- Pinia
-
-
-实现：
-
-- 全局状态管理
-- 数据同步
-- 页面通信优化
+- Database storage
+- Real user accounts
+- More realistic trading engine
 
 
 ---
 
-# 实验环境
+# 💻 Development Environment
 
 
-| 项目 | 配置 |
+| Item | Configuration |
 | :--- | :--- |
-| 操作系统 | Windows 11 |
-| 浏览器 | Microsoft Edge 135.0.3179.73 |
-| 开发工具 | Visual Studio Code |
-| 前端技术 | HTML5 / CSS3 / JavaScript |
-| 数据交互 | Fetch API / AJAX |
-| 数据可视化 | Chart.js |
-| 页面操作 | jQuery 3.6.0 |
+| Operating System | Windows 11 |
+| Browser | Microsoft Edge 135 |
+| IDE | Visual Studio Code |
+| Frontend | HTML5 / CSS3 / JavaScript |
+| Visualization | Chart.js |
 
 
 ---
 
-# 项目总结
+# 📄 Summary
 
 
-本项目完成了一个功能完整的 Web 股票交易系统前端开发，实现了从用户认证、行情展示、股票分析到交易管理的完整业务流程。
+MOMO Finance is a simulated stock trading frontend project that demonstrates the implementation of a complete financial web application.
+
+Through this project, I practiced:
+
+- Frontend architecture design
+- API communication
+- Dynamic data rendering
+- Interactive visualization
+- User authentication
+- Financial application development
 
 
-通过本项目实践，深入学习并应用了：
-
-- HTML 页面结构设计
-- CSS 页面布局与响应式设计
-- JavaScript 动态交互开发
-- 前后端接口调用
-- 异步数据处理
-- 用户状态管理
-- 数据可视化展示
-
-
-同时，在项目开发过程中解决了：
-
-- 多页面数据同步
-- 异步请求冲突
-- 数据加载顺序控制
-- 前端状态管理
-
-
-等实际开发问题。
-
-
-未来可以进一步结合 Vue/React 框架、完善后端服务以及引入数据库，实现更加接近真实证券交易平台的完整系统。
-
-
----
-
-# 项目展示
-
-## 游客模式
-
-功能：
-
-- 浏览股票行情
-- 市场切换
-- 股票搜索
-- 个股走势图查看
-
-
-## 用户模式
-
-功能：
-
-- 股票交易
-- 持仓管理
-- 盈亏统计
-- 历史交易查询
-
-
----
-
-# License
-
-本项目仅用于课程学习与技术交流。
+The project provides practical experience in building data-driven web systems and lays the foundation for developing more complex full-stack financial applications.
