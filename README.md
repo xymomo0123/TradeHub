@@ -36,33 +36,49 @@
 
 # 🖥️ 系统展示
 
+## 登录与注册
+<img width="606" height="233" alt="image" src="https://github.com/user-attachments/assets/0759ad28-8657-4da6-86ed-6201a9acbc8a" />
+<img width="610" height="294" alt="image" src="https://github.com/user-attachments/assets/3a15239f-0318-4b23-98be-9db643b3c431" />
 
-## 游客首页
+
+
+## 用户首页
 
 支持股票市场浏览、市场切换以及股票搜索。
 
-![游客首页](images/homepage.png)
+<img width="606" height="333" alt="image" src="https://github.com/user-attachments/assets/2e607b1e-f078-43fe-86fa-572339468a9b" />
+<img width="606" height="335" alt="image" src="https://github.com/user-attachments/assets/f12f6a1c-4b2f-4c41-9b23-9a669021bd29" />
 
 
 ## 个股详情分析
 
 通过折线图展示股票历史价格变化。
 
-![个股详情](images/stock-detail.png)
+<img width="606" height="299" alt="image" src="https://github.com/user-attachments/assets/ed3d1d6f-9c3d-4932-8dab-15fdf6fca98b" />
+<img width="338" height="260" alt="image" src="https://github.com/user-attachments/assets/3a93c27b-61b1-4dd7-ade7-a8209cbc2657" />
+<img width="340" height="263" alt="image" src="https://github.com/user-attachments/assets/c96a0414-9edf-4d2a-ab55-a6e536f4ec70" />
+
 
 
 ## 股票交易页面
 
 支持股票买入、卖出以及交易状态反馈。
 
-![交易页面](images/trading.png)
+<img width="205" height="358" alt="image" src="https://github.com/user-attachments/assets/fede304b-85c5-499a-9a25-3507a6b376f6" />
+
 
 
 ## 持仓管理页面
 
 展示账户资产、股票持仓以及盈亏情况。
 
-![持仓页面](images/portfolio.png)
+<img width="606" height="354" alt="image" src="https://github.com/user-attachments/assets/e4a7490e-b5fa-4778-8ae0-5f28d1501d86" />
+
+## 个人主页
+可查看个人余额、账号管理，以及交易记录。
+<img width="582" height="326" alt="image" src="https://github.com/user-attachments/assets/7b53e384-7d6e-49f0-ab64-0ea753bf4554" />
+## 注销
+<img width="548" height="305" alt="image" src="https://github.com/user-attachments/assets/e4df2bc9-37fc-4bc6-8cd1-4de4dc905662" />
 
 
 ---
