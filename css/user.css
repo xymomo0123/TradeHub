@@ -1,0 +1,479 @@
+/**
+ * user.css - 用户页面专用样式
+ */
+
+/* 用户信息区域 */
+.user-info-section {
+    background: linear-gradient(135deg, #3498db, #2c3e50);
+    color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.user-welcome {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.account-balance {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* 搜索区域 */
+.search-section {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.market-tabs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.market-tab {
+    padding: 0.5rem 1rem;
+    border: 2px solid #3498db;
+    background: white;
+    color: #3498db;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.market-tab.active {
+    background: #3498db;
+    color: white;
+}
+
+.market-tab:hover {
+    background: #3498db;
+    color: white;
+}
+
+.stock-search {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.stock-search input {
+    flex: 1;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.stock-search button {
+    padding: 0.75rem 1.5rem;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.stock-search button:hover {
+    background: #2980b9;
+}
+
+/* 刷新提示 */
+.refresh-notice {
+    background: #f8f9fa;
+    padding: 0.75rem;
+    border-radius: 4px;
+    text-align: center;
+    margin-bottom: 1rem;
+    border-left: 4px solid #3498db;
+}
+
+/* 市场表格 */
+.market-table-container {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#market-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#market-table th {
+    background: #f8f9fa;
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 2px solid #e9ecef;
+}
+
+#market-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e9ecef;
+    vertical-align: middle;
+}
+
+#market-table tr:hover {
+    background: #f8f9fa;
+}
+
+/* 价格涨跌样式 */
+.price-up {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+.price-down {
+    color: #27ae60;
+    font-weight: bold;
+}
+
+/* 用户页面专用按钮样式 */
+.btn-detail {
+    background: #17a2b8;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+}
+
+.btn-detail:hover {
+    background: #138496;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.btn-trade {
+    background: #17a2b8;
+    /* background: #28a745; */
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+}
+
+.btn-trade:hover {
+    background: #138496;
+    /* background: #218838; */
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* 导航按钮样式 */
+.nav-btn {
+    padding: 0.5rem 1rem;
+    margin-left: 1rem;
+    background: #3498db;
+    color: white !important;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+.nav-btn:hover {
+    background: #2980b9;
+    transform: translateY(-1px);
+}
+
+.nav-btn.active {
+    background: #2c3e50;
+}
+
+/* 股票详情模态框专用样式 */
+#stock-modal .modal-content {
+    width: 90%;
+    max-width: 800px;
+    background: white;
+    border-radius: 8px;
+    padding: 0;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+#stock-modal .modal-header {
+    background: #3498db;
+    color: white;
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#stock-modal .modal-title {
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+.btn-close-stock {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.btn-close-stock:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+#stock-modal .modal-body {
+    padding: 1.5rem;
+}
+
+.chart-container {
+    height: 400px;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+/* 交易模态框样式优化 */
+#trade-modal .modal-content {
+    width: 450px;
+    background: white;
+    border-radius: 8px;
+    padding: 0;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+#trade-modal .modal-header {
+    /* background: #28a745; */
+    background-color: #3498db;
+    color: white;
+    padding: 1rem 1.5rem;
+}
+
+#trade-modal .modal-title {
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+#trade-modal .modal-body {
+    padding: 1.5rem;
+}
+
+.trade-info {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+}
+
+.stock-details {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.current-price {
+    /* color: #28a745; */
+    color: #721c24;
+    font-weight: bold;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #28a745;
+    box-shadow: 0 0 0 2px rgba(40, 167, 69, 0.2);
+}
+
+.form-group small {
+    color: #6c757d;
+    font-size: 0.8rem;
+}
+
+.trade-summary {
+    background: #e9f7ef;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+}
+
+.trade-summary div {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.trade-summary div:last-child {
+    margin-bottom: 0;
+}
+
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+
+.btn-cancel {
+    padding: 0.75rem 1.5rem;
+    background: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.btn-cancel:hover {
+    background: #5a6268;
+    transform: translateY(-1px);
+}
+
+.btn-confirm {
+    padding: 0.75rem 1.5rem;
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.btn-confirm:hover {
+    background: #218838;
+    transform: translateY(-1px);
+}
+
+.btn-confirm:disabled {
+    background: #6c757d;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* 交易消息样式 */
+.trade-message {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    border-radius: 4px;
+    font-weight: bold;
+    text-align: center;
+    display: none;
+}
+
+.trade-message:not(:empty) {
+    display: block;
+}
+
+.trade-message.success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.trade-message.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.trade-message.warning {
+    background: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeaa7;
+}
+
+/* 时钟样式 */
+.navbar-clock {
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+    color: #ecf0f1;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .main-content {
+        padding: 1rem;
+    }
+    
+    .user-info-section {
+        padding: 1rem;
+    }
+    
+    .search-section {
+        padding: 1rem;
+    }
+    
+    .market-tabs {
+        flex-wrap: wrap;
+    }
+    
+    .stock-search {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .stock-search input,
+    .stock-search button {
+        width: 100%;
+    }
+    
+    #stock-modal .modal-content,
+    #trade-modal .modal-content {
+        width: 95%;
+        margin: 1rem;
+    }
+    
+    .chart-container {
+        height: 300px;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+    
+    .form-actions button {
+        width: 100%;
+    }
+}

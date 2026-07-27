@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户主页 - MOMO金融</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/guest.css">
+    <link rel="stylesheet" href="../css/user.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="navbar-brand">MOMO金融</div>
+        <div class="navbar-clock" id="real-time-clock"></div>
+        <div class="navbar-actions">
+            <a href="user.html" class="nav-btn active">首页</a>
+            <a href="portfolio.html" class="nav-btn">持仓查看</a>
+            <a href="profile.html" class="nav-btn">我的</a>
+        </div>
+    </nav>
+
+    <!-- 主内容区域 -->
+    <main class="main-content">
+        <!-- 用户信息区域 -->
+        <div class="user-info-section">
+            <div class="user-welcome">
+                欢迎，<span id="username-display">用户</span>！
+            </div>
+            <div class="account-balance">
+                账户余额：<span id="balance-display">0.00</span> 元
+            </div>
+        </div>
+
+        <!-- 搜索区域 -->
+        <div class="search-section">
+            <div class="market-tabs">
+                <button class="market-tab active" data-market="sh">沪市</button>
+                <button class="market-tab" data-market="sz">深市</button>
+                <button class="market-tab" data-market="cy">创业板</button>
+            </div>
+            <div class="stock-search">
+                <input type="text" id="stock-search-input" placeholder="输入股票代码或名称">
+                <button id="stock-search-btn">搜索</button>
+            </div>
+        </div>
+
+        <!-- 刷新提示 -->
+        <div class="refresh-notice">
+            当前页面将在 <span id="refresh-countdown">5</span> 秒后刷新
+        </div>
+
+        <!-- 大盘表格 -->
+        <div class="market-table-container">
+            <table id="market-table">
+                <thead>
+                    <tr>
+                        <th>代码</th>
+                        <th>名称</th>
+                        <th>最新价格</th>
+                        <th>当日涨跌幅</th>
+                        <th>当日涨跌额</th>
+                        <th>详情</th>
+                        <th>交易</th>
+                    </tr>
+                </thead>
+                <tbody id="market-table-body">
+                    <!-- 动态填充 -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <!-- 股票详情模态框 -->
+    <div id="stock-modal" class="modal hidden"></div>
+
+    <!-- 交易模态框 -->
+    <div id="trade-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">股票交易</h3>
+                <button class="close-btn" id="trade-close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="trade-info">
+                    <div class="stock-details">
+                        <span id="trade-stock-name">股票名称</span> <span id="trade-stock-code">(代码)</span>
+                    </div>
+                    <div class="current-price">
+                        当前价格：<span id="trade-current-price">0.00</span> 元
+                    </div>
+                </div>
+
+                <form id="trade-form">
+                    <div class="form-group">
+                        <label for="trade-type">交易类型：</label>
+                        <select id="trade-type" required>
+                            <option value="">请选择交易类型</option>
+                            <option value="buy">买入</option>
+                            <option value="sell">卖出</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="trade-quantity">数量（股）：</label>
+                        <input 
+                            type="number" 
+                            id="trade-quantity" 
+                            min="100" 
+                            step="100" 
+                            required 
+                            placeholder="请输入100的倍数"
+                            title="数量必须是100的整数倍"
+                        >
+                        <small>注：数量必须为100的整数倍</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="trade-price">价格（元）：</label>
+                        <input 
+                            type="number" 
+                            id="trade-price" 
+                            min="0.01" 
+                            step="0.01"
+                            required 
+                            placeholder="请输入交易价格"
+                            title="请输入有效的价格"
+                        >
+                        <small>注：价格最多保留2位小数</small>
+                    </div>
+
+                    <div class="trade-summary">
+                        <div>预计金额：<span id="estimated-amount">0.00</span> 元</div>
+                        <div>账户余额：<span id="modal-balance">0.00</span> 元</div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" id="cancel-trade-btn" class="btn-cancel">取消</button>
+                        <button type="submit" id="confirm-trade-btn" class="btn-confirm">确认交易</button>
+                    </div>
+                </form>
+                
+                <div id="trade-message" class="trade-message"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src="../js/chart.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/user.js"></script>
+</body>
+</html>

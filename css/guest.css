@@ -1,0 +1,321 @@
+/**
+ * guest.css - 游客页面专用样式 - 简化版
+ */
+
+/* 欢迎区域 */
+.welcome-section {
+    background: linear-gradient(135deg, #3498db, #2c3e50);
+    color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.welcome-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.welcome-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* 搜索区域 */
+.search-section {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.market-tabs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.market-tab {
+    padding: 0.5rem 1rem;
+    border: 2px solid #3498db;
+    background: white;
+    color: #3498db;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 500;
+}
+
+.market-tab.active {
+    background: #3498db;
+    color: white;
+}
+
+.market-tab:hover {
+    background: #3498db;
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(52, 152, 219, 0.3);
+}
+
+.stock-search {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.stock-search input {
+    flex: 1;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.stock-search input:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.stock-search button {
+    padding: 0.75rem 1.5rem;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s;
+    font-weight: 500;
+}
+
+.stock-search button:hover {
+    background: #2980b9;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* 刷新提示 */
+.refresh-notice {
+    background: #f8f9fa;
+    padding: 0.75rem;
+    border-radius: 4px;
+    text-align: center;
+    margin-bottom: 1rem;
+    border-left: 4px solid #3498db;
+    font-weight: 500;
+}
+
+/* 市场表格 */
+.market-table-container {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#market-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#market-table th {
+    background: #f8f9fa;
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 2px solid #e9ecef;
+    color: #2c3e50;
+}
+
+#market-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e9ecef;
+    vertical-align: middle;
+    transition: background-color 0.3s;
+}
+
+#market-table tr:hover {
+    background: #f8f9fa;
+}
+
+/* 价格涨跌样式 */
+.price-up {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+.price-down {
+    color: #27ae60;
+    font-weight: bold;
+}
+
+/* 游客页面专用按钮样式 */
+.detail-btn {
+    background: #17a2b8;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+    font-weight: 500;
+}
+
+.detail-btn:hover {
+    background: #138496;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* 导航栏时钟样式 */
+.navbar-clock {
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+    color: #ecf0f1;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+}
+
+/* 登录注册按钮样式优化 */
+#login-btn,
+#register-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: 500;
+}
+
+#login-btn {
+    margin-right: 1rem;
+}
+
+#login-btn:hover,
+#register-btn:hover {
+    background-color: #2980b9;
+    color: #ecf0f1;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* 股票详情模态框专用样式 */
+#stock-modal .modal-content {
+    width: 90%;
+    max-width: 800px;
+    background: white;
+    border-radius: 8px;
+    padding: 0;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+#stock-modal .modal-header {
+    background: #3498db;
+    color: white;
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#stock-modal .modal-title {
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+#stock-modal .close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+#stock-modal .close-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+#stock-modal .modal-body {
+    padding: 1.5rem;
+}
+
+.chart-container {
+    height: 400px;
+    margin-bottom: 1rem;
+    position: relative;
+    background: #fafafa;
+    border-radius: 4px;
+    border: 1px solid #e9ecef;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .welcome-section {
+        padding: 1rem;
+    }
+    
+    .welcome-title {
+        font-size: 1.5rem;
+    }
+    
+    .welcome-subtitle {
+        font-size: 1rem;
+    }
+    
+    .search-section {
+        padding: 1rem;
+    }
+    
+    .market-tabs {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    
+    .stock-search {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .stock-search input,
+    .stock-search button {
+        width: 100%;
+    }
+    
+    #stock-modal .modal-content {
+        width: 95%;
+        margin: 1rem;
+    }
+    
+    .chart-container {
+        height: 300px;
+    }
+    
+    #market-table th,
+    #market-table td {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+}

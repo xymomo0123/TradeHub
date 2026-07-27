@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的 - MOMO金融</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/guest.css">
+    <link rel="stylesheet" href="../css/user.css">
+    <link rel="stylesheet" href="../css/profile.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="navbar-brand">MOMO金融</div>
+        <div class="navbar-clock" id="real-time-clock"></div>
+        <div class="navbar-actions">
+            <a href="user.html" class="nav-btn">首页</a>
+            <a href="portfolio.html" class="nav-btn">持仓查看</a>
+            <a href="profile.html" class="nav-btn active">我的</a>
+        </div>
+    </nav>
+
+    <!-- 主内容区域 -->
+    <main class="main-content">
+        <!-- 用户信息区域 -->
+        <div class="profile-header">
+            <div class="user-avatar">
+                <div class="avatar-icon">👤</div>
+            </div>
+            <div class="user-details">
+                <h1 class="username">
+                    欢迎，<span id="username-display">用户</span>！
+                </h1>
+                <div class="account-info">
+                    <div class="balance-display">
+                        账户余额：<span id="balance-display">0.00</span> 元
+                    </div>
+                    <div class="join-date">
+                        账户状态：正常
+                    </div>
+                </div>
+            </div>
+            <div class="profile-actions">
+                <button id="logout-btn" class="logout-btn">注销账户</button>
+            </div>
+        </div>
+
+        <!-- 账户统计 -->
+        <div class="account-stats">
+            <div class="stat-card">
+                <div class="stat-label">总交易次数</div>
+                <div class="stat-value" id="total-trades">0</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">成功交易</div>
+                <div class="stat-value" id="successful-trades">0</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">委托中</div>
+                <div class="stat-value" id="pending-trades">0</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">最近交易</div>
+                <div class="stat-value" id="last-trade-date">-</div>
+            </div>
+        </div>
+
+        <!-- 交易记录 -->
+        <div class="trade-records-container">
+            <div class="records-header">
+                <h2>交易记录</h2>
+                <div class="filter-controls">
+                    <select id="direction-filter" class="filter-select">
+                        <option value="">全部方向</option>
+                        <option value="0">买入</option>
+                        <option value="1">卖出</option>
+                    </select>
+                    <select id="state-filter" class="filter-select">
+                        <option value="">全部状态</option>
+                        <option value="0">错误</option>
+                        <option value="1">委托成功</option>
+                        <option value="2">交易成功</option>
+                        <option value="3">废单</option>
+                        <option value="4">余额不足</option>
+                        <option value="5">持仓不足</option>
+                    </select>
+                    <button id="refresh-records-btn" class="refresh-btn">刷新记录</button>
+                </div>
+            </div>
+            
+            <div class="table-wrapper">
+                <table id="trade-records-table">
+                    <thead>
+                        <tr>
+                            <th>交易时间</th>
+                            <th>股票代码</th>
+                            <th>股票名称</th>
+                            <th>交易方向</th>
+                            <th>挂单价格</th>
+                            <th>成交价格</th>
+                            <th>成交数量</th>
+                            <th>成交金额</th>
+                            <th>交易状态</th>
+                            <th>交易单号</th>
+                        </tr>
+                    </thead>
+                    <tbody id="trade-records-body">
+                        <!-- 动态填充 -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- 空状态 -->
+            <div id="empty-records" class="empty-state hidden">
+                <div class="empty-icon">📋</div>
+                <div class="empty-text">暂无交易记录</div>
+                <div class="empty-subtext">您还没有进行过任何交易</div>
+                <a href="user.html" class="btn-primary">去交易</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- 注销模态框 -->
+    <div id="logout-modal" class="modal hidden">
+        <div class="modal-content logout-modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">确认注销</h3>
+            </div>
+            <div class="modal-body">
+                <div class="logout-warning">
+                    <div class="warning-icon">⚠️</div>
+                    <div class="warning-text">
+                        <p>您确定要注销当前账户吗？</p>
+                        <p>注销后将返回游客界面，需要重新登录才能继续交易。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="cancel-logout-btn" class="btn-cancel">取消</button>
+                <button id="confirm-logout-btn" class="btn-danger">确认注销</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript 文件 -->
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/profile.js"></script>
+</body>
+</html>
