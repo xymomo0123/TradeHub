@@ -75,7 +75,9 @@
 <img width="606" height="354" alt="image" src="https://github.com/user-attachments/assets/e4a7490e-b5fa-4778-8ae0-5f28d1501d86" />
 
 ## 个人主页
+
 可查看个人余额、账号管理，以及交易记录。
+
 <img width="582" height="326" alt="image" src="https://github.com/user-attachments/assets/7b53e384-7d6e-49f0-ab64-0ea753bf4554" />
 ## 注销
 <img width="548" height="305" alt="image" src="https://github.com/user-attachments/assets/e4df2bc9-37fc-4bc6-8cd1-4de4dc905662" />
